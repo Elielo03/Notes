@@ -1,0 +1,187 @@
+Recursividad
+	Explicacion con algoritmo de factorial de 4
+	
+		
+	-Problema 2 de serie Fibonacci 0,1,1,2,3,5,8,13,21
+		Fibonacci(0) = 0 (caso base)
+		Fibonacci(1) = 1 (caso base)
+		Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2) (caso recursivo)
+		 public class Recursividad {
+
+			// Método recursivo para calcular 	el n-ésimo número de Fibonacci
+			public static int fibonacci(int n) {
+				if (n <= 1) {
+					return n;  // Casos base: Fibonacci(0) = 0, Fibonacci(1) = 1
+				} else {
+					return fibonacci(n - 1) + fibonacci(n - 2);  // Caso recursivo
+				}
+			}
+
+			public static void main(String[] args) {
+				int n = 10;  // Cambia el valor para calcular diferentes números de Fibonacci
+				System.out.println("El " + n + "º número de Fibonacci es: " + fibonacci(n));
+			}
+		}
+	Problema 3: Invertir una cadena
+		invertir("") = "" (una cadena vacía es su propia inversa)
+		invertir(cadena) = invertir(restoDeCadena) + primerCaracter
+				public class Recursividad {
+
+			// Método recursivo para invertir una cadena
+			public static String invertir(String cadena) {
+				if (cadena.isEmpty()) {
+					return cadena;  // Caso base: una cadena vacía es su propia inversa
+				} else {
+					return invertir(cadena.substring(1)) + cadena.charAt(0);  // Caso recursivo
+				}
+			}
+
+			public static void main(String[] args) {
+				String texto = "recursividad";
+				System.out.println("Cadena invertida: " + invertir(texto));
+			}
+		}
+		
+	Problema 4: Potencia de un número
+		Definición recursiva:
+		potencia(x, 0) = 1 (cualquier número elevado a 0 es 1)
+		potencia(x, n) = x * potencia(x, n-1) (caso recursivo)
+						public class Recursividad {
+
+			// Método recursivo para calcular x^n
+			public static int potencia(int x, int n) {
+				if (n == 0) {
+					return 1;  // Caso base: cualquier número elevado a 0 es 1
+				} else {
+					return x * potencia(x, n - 1);  // Caso recursivo
+				}
+			}
+
+			public static void main(String[] args) {
+				int base = 2;
+				int exponente = 5;
+				System.out.println(base + " elevado a " + exponente + " es: " + potencia(base, exponente));
+			}
+		}
+
+
+
+Clases abstractas ej:
+
+abstract class Forma {
+    private String color;
+
+    public Forma(String color) {
+        this.color = color;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    // Método abstracto: las subclases deben implementarlo
+    public abstract double area();
+
+    // Método concreto: las subclases pueden usarlo tal cual
+    public String describir() {
+        return "Esta es una forma de color " + color;
+    }
+}
+
+// Subclase concreta que extiende la clase abstracta Forma
+class Circulo extends Forma {
+    private double radio;
+
+    public Circulo(String color, double radio) {
+        super(color);
+        this.radio = radio;
+    }
+
+    @Override
+    public double area() {
+        return Math.PI * radio * radio;
+    }
+}
+
+Ej de interfaz
+
+// Definición de una interfaz para operaciones geométricas
+interface OperacionesGeometricas {
+    double area();
+    double perimetro();
+}
+
+// Clase que implementa la interfaz OperacionesGeometricas
+class Rectangulo implements OperacionesGeometricas {
+    private double largo, ancho;
+
+    public Rectangulo(double largo, double ancho) {
+        this.largo = largo;
+        this.ancho = ancho;
+    }
+
+    @Override
+    public double area() {
+        return largo * ancho;
+    }
+
+    @Override
+    public double perimetro() {
+        return 2 * (largo + ancho);
+    }
+}
+
+
+Ejemplo combinado de clase abstracta e interfaz
+// Clase abstracta que define una forma general
+abstract class Forma {
+    private String color;
+
+    public Forma(String color) {
+        this.color = color;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    // Método abstracto que las subclases deben implementar
+    public abstract double area();
+}
+
+// Interfaz que define operaciones geométricas
+interface OperacionesGeometricas {
+    double perimetro();
+}
+
+// Clase concreta que extiende Forma e implementa OperacionesGeometricas
+class Triangulo extends Forma implements OperacionesGeometricas {
+    private double base, altura, lado1, lado2, lado3;
+
+    public Triangulo(String color, double base, double altura, double lado1, double lado2, double lado3) {
+        super(color);
+        this.base = base;
+        this.altura = altura;
+        this.lado1 = lado1;
+        this.lado2 = lado2;
+        this.lado3 = lado3;
+    }
+
+    @Override
+    public double area() {
+        return (base * altura) / 2;
+    }
+
+    @Override
+    public double perimetro() {
+        return lado1 + lado2 + lado3;
+    }
+}
+
+
+18 hrs por semana
+
+salario bruto mensual = 8694
+
+salario neto = 7626 + despesnsa y material dedictico 929.70
+726
