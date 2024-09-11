@@ -179,6 +179,77 @@ class Triangulo extends Forma implements OperacionesGeometricas {
 }
 
 
+RECURSVIDAD: 
+Ejercicio 1 Factorial de un numero
+Definición recursiva:
+funcion factorial(num):
+	fact=1
+	para i desde 2 hasta num:
+		fact=fact*i
+	retornar fact
+
+funcion factorial (num):
+	si num=0
+		retornar 1
+	si no:
+		retornar num* factorial(num-1)
+
+Factorial(0) = 1 (caso base)
+Factorial(n) = n * Factorial(n-1) (caso recursivo)
+Codigo:
+public class Recursividad {
+
+    // Método recursivo para calcular el factorial de un número
+    public static int factorial(int n) {
+        if (n == 0) {
+            return 1;  // Caso base: Factorial(0) = 1
+        } else {
+            return n * factorial(n - 1);  // Caso recursivo
+        }
+    }
+
+    public static void main(String[] args) {
+        int n = 5;  // Cambia el valor para calcular el factorial de diferentes números
+        System.out.println("El factorial de " + n + " es: " + factorial(n));
+    }
+}
+
+Ejercicio La serie de Fibonacci es una secuencia donde cada número es la suma de los dos anteriores: 0, 1, 1, 2, 3, 5, 8, 13, 21, ...
+Fibonacci(0) = 0 (caso base)
+Fibonacci(1) = 1 (caso base)
+Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2) (caso recursivo)
+
+public class Recursividad {
+
+    // Método recursivo para calcular el n-ésimo número de Fibonacci
+    public static int fibonacci(int n) {
+        if (n <= 1) {
+            return n;  // Casos base: Fibonacci(0) = 0, Fibonacci(1) = 1
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);  // Caso recursivo
+        }
+    }
+
+    public static void main(String[] args) {
+        int n = 10;  // Cambia el valor para calcular diferentes números de Fibonacci
+        System.out.println("El " + n + "º número de Fibonacci es: " + fibonacci(n));
+    }
+}
+
+Ejercicio Potencia de un número
+Caso base:
+Si el exponente es 0 (exponente == 0), devolvemos 1, ya que cualquier número elevado a la potencia 0 es 1.
+Caso recursivo:
+Multiplicamos la base por el resultado de la potencia de base elevado a exponente - 1 (llamada recursiva).
+
+public static int potencia(int base, int exponente) {
+    if (exponente == 0) {  // Caso base
+        return 1;
+    }
+    // Caso recursivo: base * potencia(base, exponente - 1)
+    return base * potencia(base, exponente - 1);
+}
+
 18 hrs por semana
 
 salario bruto mensual = 8694
